@@ -118,5 +118,11 @@ namespace Game_of_Life___Jonah_Pickett
                 graphicsPanel1.Invalidate();
             }
         }
+
+        // File -> Exit Button 
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close(); // closes the program
+        }
     }
 }
