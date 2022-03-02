@@ -67,6 +67,13 @@ namespace Game_of_Life___Jonah_Pickett
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.graphicsPanel1 = new Game_of_Life___Jonah_Pickett.GraphicsPanel();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.HUD = new System.Windows.Forms.ToolStripMenuItem();
+            this.neighborCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toroidalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.finiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -76,6 +83,7 @@ namespace Game_of_Life___Jonah_Pickett
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.viewToolStripMenuItem,
             this.toolsToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -388,6 +396,59 @@ namespace Game_of_Life___Jonah_Pickett
             this.graphicsPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.graphicsPanel1_Paint);
             this.graphicsPanel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.graphicsPanel1_MouseClick);
             // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.HUD,
+            this.neighborCountToolStripMenuItem,
+            this.gridToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.toroidalToolStripMenuItem,
+            this.finiteToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // HUD
+            // 
+            this.HUD.Name = "HUD";
+            this.HUD.Size = new System.Drawing.Size(180, 22);
+            this.HUD.Text = "toolStripMenuItem1";
+            this.HUD.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // neighborCountToolStripMenuItem
+            // 
+            this.neighborCountToolStripMenuItem.Name = "neighborCountToolStripMenuItem";
+            this.neighborCountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.neighborCountToolStripMenuItem.Text = "Neighbor Count";
+            // 
+            // gridToolStripMenuItem
+            // 
+            this.gridToolStripMenuItem.Checked = true;
+            this.gridToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.gridToolStripMenuItem.Name = "gridToolStripMenuItem";
+            this.gridToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gridToolStripMenuItem.Text = "Grid";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toroidalToolStripMenuItem
+            // 
+            this.toroidalToolStripMenuItem.Name = "toroidalToolStripMenuItem";
+            this.toroidalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.toroidalToolStripMenuItem.Text = "Toroidal";
+            this.toroidalToolStripMenuItem.CheckedChanged += new System.EventHandler(this.toroidalToolStripMenuItem_CheckedChanged);
+            // 
+            // finiteToolStripMenuItem
+            // 
+            this.finiteToolStripMenuItem.Name = "finiteToolStripMenuItem";
+            this.finiteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.finiteToolStripMenuItem.Text = "Finite";
+            this.finiteToolStripMenuItem.CheckedChanged += new System.EventHandler(this.finiteToolStripMenuItem_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,6 +511,13 @@ namespace Game_of_Life___Jonah_Pickett
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem HUD;
+        private System.Windows.Forms.ToolStripMenuItem neighborCountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gridToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem toroidalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem finiteToolStripMenuItem;
     }
 }
 

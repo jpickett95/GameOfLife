@@ -12,6 +12,9 @@ namespace Game_of_Life___Jonah_Pickett
 {
     public partial class Form1 : Form
     {
+        bool toroidalChecked = false;
+        bool finiteChecked = false;
+
         // The universe array
         bool[,] universe = new bool[5, 5];
 
@@ -49,6 +52,8 @@ namespace Game_of_Life___Jonah_Pickett
 
 
                     // Apply the rules
+                    // Rule 1
+
 
 
                     // Turn it on/off in the scratchPad
@@ -289,6 +294,24 @@ namespace Game_of_Life___Jonah_Pickett
                 }
             }
             return count;
+        }
+
+        // HUD
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // View -> Toroidal button
+        private void toroidalToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+            toroidalChecked = !toroidalChecked;
+        }
+
+        // View -> Finite button
+        private void finiteToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+            finiteChecked = !finiteChecked;
         }
     }
 }
