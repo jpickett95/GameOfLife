@@ -38,12 +38,14 @@ namespace Game_of_Life___Jonah_Pickett
         // Calculate the next generation of cells
         private void NextGeneration()
         {
-            for ( int y =0; y < universe.GetLength(1); y++)
+            bool[,] scratchPad = new bool[universe.GetLength(0), universe.GetLength(1)];
+
+            for ( int y = 0; y < universe.GetLength(1); y++)
             {
                 // Iterate through the universe in the x, left to right
                 for(int x = 0; x < universe.GetLength(0); x++)
                 {
-                    // int count = CountNeighbor
+                    int count = CountNeighborsFinite(x, y);
 
 
                     // Apply the rules
@@ -56,14 +58,18 @@ namespace Game_of_Life___Jonah_Pickett
             }
 
             // Copy from scratchPad to universe; swap
+            bool[,] temp = universe;
+            universe = scratchPad;
+            scratchPad = temp;
 
             // Increment generation count
             generations++;
 
             // Update status strip generations
             toolStripStatusLabelGenerations.Text = "Generations = " + generations.ToString();
-        
+
             // Invalidate graphics panel
+            graphicsPanel1.Invalidate();
         }
 
         // The event called by the timer every Interval milliseconds.
@@ -108,6 +114,19 @@ namespace Game_of_Life___Jonah_Pickett
 
                     // Outline the cell with a pen
                     e.Graphics.DrawRectangle(gridPen, cellRect.X, cellRect.Y, cellRect.Width, cellRect.Height);
+
+                    // Displaying Neighbor Count
+                    int neighbors = CountNeighborsFinite(x, y);
+                    if (neighbors != 0)
+                    {
+                        Font font = new Font("Arial", 20f);
+
+                        StringFormat stringFormat = new StringFormat();
+                        stringFormat.Alignment = StringAlignment.Center;
+                        stringFormat.LineAlignment = StringAlignment.Center;
+
+                        e.Graphics.DrawString(neighbors.ToString(), font, Brushes.Black, cellRect, stringFormat);
+                    }               
                 }
             }
 
@@ -188,6 +207,88 @@ namespace Game_of_Life___Jonah_Pickett
                 }
             }
             graphicsPanel1.Invalidate();
+        }
+
+        // Counting Neighbors
+        // Finite
+        private int CountNeighborsFinite(int x, int y)
+        {
+            int count = 0;
+            int xLen = universe.GetLength(0);
+            int yLen = universe.GetLength(1);
+
+            for(int yOffset = -1; yOffset <= 1; yOffset++)
+            {
+                for (int xOffset = -1; xOffset <= 1; xOffset++)
+                {
+                    int xCheck = x + xOffset;
+                    int yCheck = y + yOffset;
+
+                    if(xOffset == 0 && yOffset == 0)
+                    {
+                        continue;
+                    }
+                    if(xCheck < 0)
+                    {
+                        continue;
+                    }
+                    if ( yCheck < 0)
+                    {
+                        continue;
+                    }
+                    if(xCheck >= xLen)
+                    {
+                        continue;
+                    }
+                    if(yCheck >= yLen)
+                    {
+                        continue;
+                    }
+
+                    if (universe[xCheck, yCheck] == true) count++;
+                }
+            }
+            return count;
+        }
+        // Toroidal
+        private int CountNeighborsToroidal(int x, int y)
+        {
+            int count = 0;
+            int xLen = universe.GetLength(0);
+            int yLen = universe.GetLength(1);
+
+            for (int yOffset = -1; yOffset <= 1; yOffset++)
+            {
+                for (int xOffset = -1; xOffset <= 1; xOffset++)
+                {
+                    int xCheck = x + xOffset;
+                    int yCheck = y + yOffset;
+
+                    if (xOffset == 0 && yOffset == 0)
+                    {
+                        continue;
+                    }
+                    if (xCheck < 0)
+                    {
+                        xCheck = xLen - 1;
+                    }
+                    if (yCheck < 0)
+                    {
+                        yCheck = yLen - 1;
+                    }
+                    if (xCheck >= xLen)
+                    {
+                        xCheck = 0;
+                    }
+                    if (yCheck >= yLen)
+                    {
+                        yCheck = 0;
+                    }
+
+                    if (universe[xCheck, yCheck] == true) count++;
+                }
+            }
+            return count;
         }
     }
 }
