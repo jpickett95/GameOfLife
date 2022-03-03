@@ -231,28 +231,21 @@ namespace Game_of_Life___Jonah_Pickett
 
         // File -> New button (click event)
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {                       
             for (int y = 0; y < universe.GetLength(1); y++)
             {
                 for (int x = 0; x < universe.GetLength(0); x++)
                 {
                     universe[x, y] = false;
                 }
-            }
+            }                       
+            timer.Enabled = false;
+            generations = 0;
+            livingCells = 0;
+            toolStripStatusLabelGenerations.Text = "Generations = " + generations.ToString();
+            toolStripStatusLabelAlive.Text = "Alive = " + livingCells.ToString();
             graphicsPanel1.Invalidate();
-        }
-        // New button (click event)
-        private void newToolStripButton_Click(object sender, EventArgs e)
-        {
-            for (int y = 0; y < universe.GetLength(1); y++)
-            {
-                for (int x = 0; x < universe.GetLength(0); x++)
-                {
-                    universe[x, y] = false;
-                }
-            }
-            graphicsPanel1.Invalidate();
-        }
+        }       
 
         // Counting Neighbors
         private int CountNeighbors(int x, int y)
