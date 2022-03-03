@@ -367,7 +367,58 @@ namespace Game_of_Life___Jonah_Pickett
             finiteToolStripMenuItem.Checked = !finiteToolStripMenuItem.Checked;
         }
 
-        
-        
+        // Initial Random Universe
+        private void RandomizeUniverse()
+        {
+            int livingCount = (universe.GetLength(1) * universe.GetLength(0)) / 3;
+            Random rng = new Random();
+            for (int y = 0; y < universe.GetLength(1); y++)
+            {
+                for (int x = 0; x < universe.GetLength(0); x++)
+                {
+                    if (livingCount > 0)
+                    {
+                        int number = rng.Next(0, 3);
+                        if (number == 0)
+                        {
+                            universe[x, y] = true;
+                        }
+                        else
+                            universe[x, y] = false;
+
+                        livingCount--;
+                    }
+                    else
+                        universe[x, y] = false;
+                }
+            }
+        }
+        private void RandomizeUniverseByTime()
+        {
+            int livingCount = (universe.GetLength(1) * universe.GetLength(0)) / 3;
+            Random rng = new Random((int)DateTime.Now.Ticks);
+            for (int y = 0; y < universe.GetLength(1); y++)
+            {
+                for (int x = 0; x < universe.GetLength(0); x++)
+                {
+                    if (livingCount > 0)
+                    {
+                        int number = rng.Next(0, 3);
+                        if (number == 0)
+                        {
+                            universe[x, y] = true;
+                        }
+                        else
+                            universe[x, y] = false;
+
+                        livingCount--;
+                    }
+                    else
+                        universe[x, y] = false;
+                }
+            }
+
+            graphicsPanel1.Invalidate();
+        }
     }
 }
