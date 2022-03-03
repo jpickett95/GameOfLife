@@ -452,8 +452,11 @@ namespace Game_of_Life___Jonah_Pickett
         // View -> Grid button
         private void gridToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            gridToolStripMenuItem1.Checked = !gridToolStripMenuItem1.Checked; // context menu strip (View -> Grid button)
             gridToolStripMenuItem.Checked = !gridToolStripMenuItem.Checked;
             graphicsPanel1.Invalidate();
         }
+
+        
     }
 }
