@@ -25,6 +25,9 @@ namespace Game_of_Life___Jonah_Pickett
         // Generation count
         int generations = 0;
 
+        // Living Cells count
+        int livingCells = 0;
+
         public Form1()
         {
             InitializeComponent(); // constructor; calling designer code
@@ -85,7 +88,7 @@ namespace Game_of_Life___Jonah_Pickett
             toolStripStatusLabelGenerations.Text = "Generations = " + generations.ToString();
 
             // Update status strip living cells
-            int livingCells = 0;
+            livingCells = 0;
             for (int y = 0; y < universe.GetLength(1); y++)
             {
                 for (int x = 0; x < universe.GetLength(0); x++)
@@ -181,6 +184,13 @@ namespace Game_of_Life___Jonah_Pickett
 
                 // Toggle the cell's state
                 universe[x, y] = !universe[x, y];
+
+                // Update living cells count
+                if (universe[x, y] == true) // toggle on
+                    livingCells++;
+                else if (universe[x, y] == false) // toggle off
+                    livingCells--;
+                toolStripStatusLabelAlive.Text = "Alive = " + livingCells.ToString();
 
                 // Tell Windows you need to repaint
                 graphicsPanel1.Invalidate(); // used after every click, every new generation, after "new", turnthings on/off, etc;

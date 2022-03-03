@@ -535,8 +535,8 @@ namespace Game_of_Life___Jonah_Pickett
             // toolStripStatusLabelAlive
             // 
             this.toolStripStatusLabelAlive.Name = "toolStripStatusLabelAlive";
-            this.toolStripStatusLabelAlive.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabelAlive.Text = "toolStripStatusLabel1";
+            this.toolStripStatusLabelAlive.Size = new System.Drawing.Size(53, 17);
+            this.toolStripStatusLabelAlive.Text = "Alive = 0";
             // 
             // Form1
             // 
