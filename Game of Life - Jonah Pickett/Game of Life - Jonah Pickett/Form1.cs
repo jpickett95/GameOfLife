@@ -147,17 +147,20 @@ namespace Game_of_Life___Jonah_Pickett
                     e.Graphics.DrawRectangle(gridPen, cellRect.X, cellRect.Y, cellRect.Width, cellRect.Height);
 
                     // Displaying Neighbor Count
-                    int neighbors = CountNeighbors(x, y);
-                    if (neighbors != 0)
+                    if(neighborCountToolStripMenuItem.Checked == true)
                     {
-                        Font font = new Font("Arial", 20f);
+                        int neighbors = CountNeighbors(x, y);
+                        if (neighbors != 0)
+                        {
+                            Font font = new Font("Arial", 20f);
 
-                        StringFormat stringFormat = new StringFormat();
-                        stringFormat.Alignment = StringAlignment.Center;
-                        stringFormat.LineAlignment = StringAlignment.Center;
+                            StringFormat stringFormat = new StringFormat();
+                            stringFormat.Alignment = StringAlignment.Center;
+                            stringFormat.LineAlignment = StringAlignment.Center;
 
-                        e.Graphics.DrawString(neighbors.ToString(), font, Brushes.Black, cellRect, stringFormat);
-                    }               
+                            e.Graphics.DrawString(neighbors.ToString(), font, Brushes.Black, cellRect, stringFormat);
+                        }
+                    }             
                 }
             }
 
@@ -435,9 +438,17 @@ namespace Game_of_Life___Jonah_Pickett
             graphicsPanel1.Invalidate();
         }
 
+        // Randomize -> From Time button
         private void fromTimeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RandomizeUniverseByTime();
+        }
+
+        // View -> Counting Numbers button
+        private void neighborCountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            neighborCountToolStripMenuItem.Checked = !neighborCountToolStripMenuItem.Checked;
+            graphicsPanel1.Invalidate();
         }
     }
 }
