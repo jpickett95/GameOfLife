@@ -121,6 +121,7 @@ namespace Game_of_Life___Jonah_Pickett
             // 
             // importToolStripMenuItem
             // 
+            this.importToolStripMenuItem.Enabled = false;
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
             this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.importToolStripMenuItem.Text = "&Import";
@@ -157,6 +158,7 @@ namespace Game_of_Life___Jonah_Pickett
             // 
             // HUD
             // 
+            this.HUD.Enabled = false;
             this.HUD.Name = "HUD";
             this.HUD.Size = new System.Drawing.Size(180, 22);
             this.HUD.Text = "HUD";
@@ -173,6 +175,7 @@ namespace Game_of_Life___Jonah_Pickett
             // 
             // gridToolStripMenuItem
             // 
+            this.gridToolStripMenuItem.Enabled = false;
             this.gridToolStripMenuItem.Name = "gridToolStripMenuItem";
             this.gridToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gridToolStripMenuItem.Text = "Grid";
@@ -213,6 +216,7 @@ namespace Game_of_Life___Jonah_Pickett
             // 
             // toToolStripMenuItem
             // 
+            this.toToolStripMenuItem.Enabled = false;
             this.toToolStripMenuItem.Name = "toToolStripMenuItem";
             this.toToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.toToolStripMenuItem.Text = "&To";
@@ -239,6 +243,7 @@ namespace Game_of_Life___Jonah_Pickett
             this.toolStripSeparator4,
             this.resetToolStripMenuItem,
             this.reloadToolStripMenuItem});
+            this.settingsToolStripMenuItem.Enabled = false;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "&Settings";
@@ -421,6 +426,7 @@ namespace Game_of_Life___Jonah_Pickett
             // 
             // openToolStripMenuItem
             // 
+            this.openToolStripMenuItem.Enabled = false;
             this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
@@ -430,6 +436,7 @@ namespace Game_of_Life___Jonah_Pickett
             // 
             // saveToolStripMenuItem
             // 
+            this.saveToolStripMenuItem.Enabled = false;
             this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
@@ -466,12 +473,14 @@ namespace Game_of_Life___Jonah_Pickett
             // 
             // fromSeedToolStripMenuItem
             // 
+            this.fromSeedToolStripMenuItem.Enabled = false;
             this.fromSeedToolStripMenuItem.Name = "fromSeedToolStripMenuItem";
             this.fromSeedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fromSeedToolStripMenuItem.Text = "From Seed";
             // 
             // fromCurrentSeedToolStripMenuItem
             // 
+            this.fromCurrentSeedToolStripMenuItem.Enabled = false;
             this.fromCurrentSeedToolStripMenuItem.Name = "fromCurrentSeedToolStripMenuItem";
             this.fromCurrentSeedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fromCurrentSeedToolStripMenuItem.Text = "From Current Seed";
