@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// Double Buffering
 // Change the namespace to your project's namespace.
 namespace Game_of_Life___Jonah_Pickett
 {
