@@ -391,7 +391,7 @@ namespace Game_of_Life___Jonah_Pickett
             finiteToolStripMenuItem.Checked = !finiteToolStripMenuItem.Checked;
         }
 
-        // Initial Random Universe
+        // Initial Randomize Universe
         private void RandomizeUniverse()
         {
             int livingCount = (universe.GetLength(1) * universe.GetLength(0)) / 3;
@@ -417,6 +417,7 @@ namespace Game_of_Life___Jonah_Pickett
                 }
             }
         }
+        // Randomize Universe by Time
         private void RandomizeUniverseByTime()
         {            
             Random timerng = new Random((int)DateTime.Now.Ticks);
