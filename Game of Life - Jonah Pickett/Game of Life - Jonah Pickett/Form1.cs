@@ -420,5 +420,10 @@ namespace Game_of_Life___Jonah_Pickett
 
             graphicsPanel1.Invalidate();
         }
+
+        private void fromTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RandomizeUniverseByTime();
+        }
     }
 }
