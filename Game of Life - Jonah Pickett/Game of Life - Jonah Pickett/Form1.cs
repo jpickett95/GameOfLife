@@ -144,7 +144,11 @@ namespace Game_of_Life___Jonah_Pickett
                     }
 
                     // Outline the cell with a pen
-                    e.Graphics.DrawRectangle(gridPen, cellRect.X, cellRect.Y, cellRect.Width, cellRect.Height);
+                    if(gridToolStripMenuItem.Checked == true) // check if view option is checked
+                    {
+                        e.Graphics.DrawRectangle(gridPen, cellRect.X, cellRect.Y, cellRect.Width, cellRect.Height);
+                    }
+                    
 
                     // Displaying Neighbor Count
                     if(neighborCountToolStripMenuItem.Checked == true)
@@ -449,6 +453,13 @@ namespace Game_of_Life___Jonah_Pickett
         private void neighborCountToolStripMenuItem_Click(object sender, EventArgs e)
         {
             neighborCountToolStripMenuItem.Checked = !neighborCountToolStripMenuItem.Checked;
+            graphicsPanel1.Invalidate();
+        }
+
+        // View -> Grid button
+        private void gridToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gridToolStripMenuItem.Checked = !gridToolStripMenuItem.Checked;
             graphicsPanel1.Invalidate();
         }
     }
