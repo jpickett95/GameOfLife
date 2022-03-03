@@ -13,7 +13,7 @@ namespace Game_of_Life___Jonah_Pickett
     public partial class Form1 : Form
     {
         bool toroidalChecked = false;
-        bool finiteChecked = false;
+        bool finiteChecked = true;
 
         // The universe array
         bool[,] universe = new bool[5, 5];
@@ -48,7 +48,7 @@ namespace Game_of_Life___Jonah_Pickett
                 // Iterate through the universe in the x, left to right
                 for(int x = 0; x < universe.GetLength(0); x++)
                 {
-                    int count = CountNeighborsFinite(x, y);
+                    int count = CountNeighbors(x, y);
 
 
                     // Apply the rules
@@ -121,7 +121,7 @@ namespace Game_of_Life___Jonah_Pickett
                     e.Graphics.DrawRectangle(gridPen, cellRect.X, cellRect.Y, cellRect.Width, cellRect.Height);
 
                     // Displaying Neighbor Count
-                    int neighbors = CountNeighborsFinite(x, y);
+                    int neighbors = CountNeighbors(x, y);
                     if (neighbors != 0)
                     {
                         Font font = new Font("Arial", 20f);
@@ -215,6 +215,20 @@ namespace Game_of_Life___Jonah_Pickett
         }
 
         // Counting Neighbors
+        private int CountNeighbors(int x, int y)
+        {
+            int neighbors = 0;
+            if(toroidalChecked == true)
+            {
+                neighbors = CountNeighborsToroidal(x, y);
+            }
+            else if (finiteChecked == true)
+            {
+                neighbors = CountNeighborsFinite(x, y);
+            }
+
+            return neighbors;
+        }
         // Finite
         private int CountNeighborsFinite(int x, int y)
         {
@@ -316,6 +330,8 @@ namespace Game_of_Life___Jonah_Pickett
                 finiteChecked = true;
                 finiteToolStripMenuItem.Checked = true;
             }
+
+            graphicsPanel1.Invalidate();
         }
         private void toroidalToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -336,6 +352,7 @@ namespace Game_of_Life___Jonah_Pickett
                 toroidalChecked = true;
                 toroidalToolStripMenuItem.Checked = true;
             }
+            graphicsPanel1.Invalidate();
         }
         private void finiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
