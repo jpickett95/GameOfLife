@@ -29,6 +29,7 @@ namespace Game_of_Life___Jonah_Pickett
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,9 +86,13 @@ namespace Game_of_Life___Jonah_Pickett
             this.reloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripStatusLabelAlive = new System.Windows.Forms.ToolStripStatusLabel();
+            this.gridPanelMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.gridPanelMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -340,6 +345,7 @@ namespace Game_of_Life___Jonah_Pickett
             // graphicsPanel1
             // 
             this.graphicsPanel1.BackColor = System.Drawing.SystemColors.Window;
+            this.graphicsPanel1.ContextMenuStrip = this.gridPanelMenuStrip1;
             this.graphicsPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.graphicsPanel1.Location = new System.Drawing.Point(0, 49);
             this.graphicsPanel1.Name = "graphicsPanel1";
@@ -496,24 +502,28 @@ namespace Game_of_Life___Jonah_Pickett
             // 
             // backColorToolStripMenuItem
             // 
+            this.backColorToolStripMenuItem.Enabled = false;
             this.backColorToolStripMenuItem.Name = "backColorToolStripMenuItem";
             this.backColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.backColorToolStripMenuItem.Text = "Back Color";
             // 
             // cellColorToolStripMenuItem
             // 
+            this.cellColorToolStripMenuItem.Enabled = false;
             this.cellColorToolStripMenuItem.Name = "cellColorToolStripMenuItem";
             this.cellColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cellColorToolStripMenuItem.Text = "Cell Color";
             // 
             // gridColorToolStripMenuItem
             // 
+            this.gridColorToolStripMenuItem.Enabled = false;
             this.gridColorToolStripMenuItem.Name = "gridColorToolStripMenuItem";
             this.gridColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gridColorToolStripMenuItem.Text = "Grid Color";
             // 
             // gridX10ColorToolStripMenuItem
             // 
+            this.gridX10ColorToolStripMenuItem.Enabled = false;
             this.gridX10ColorToolStripMenuItem.Name = "gridX10ColorToolStripMenuItem";
             this.gridX10ColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gridX10ColorToolStripMenuItem.Text = "Grid x10 Color";
@@ -531,12 +541,14 @@ namespace Game_of_Life___Jonah_Pickett
             // 
             // resetToolStripMenuItem
             // 
+            this.resetToolStripMenuItem.Enabled = false;
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
             this.resetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.resetToolStripMenuItem.Text = "Reset";
             // 
             // reloadToolStripMenuItem
             // 
+            this.reloadToolStripMenuItem.Enabled = false;
             this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
             this.reloadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reloadToolStripMenuItem.Text = "Reload";
@@ -551,6 +563,27 @@ namespace Game_of_Life___Jonah_Pickett
             this.toolStripStatusLabelAlive.Name = "toolStripStatusLabelAlive";
             this.toolStripStatusLabelAlive.Size = new System.Drawing.Size(53, 17);
             this.toolStripStatusLabelAlive.Text = "Alive = 0";
+            // 
+            // gridPanelMenuStrip1
+            // 
+            this.gridPanelMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.colorToolStripMenuItem,
+            this.viewToolStripMenuItem1});
+            this.gridPanelMenuStrip1.Name = "gridPanelMenuStrip1";
+            this.gridPanelMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            // 
+            // colorToolStripMenuItem
+            // 
+            this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.colorToolStripMenuItem.Text = "Color";
+            // 
+            // viewToolStripMenuItem1
+            // 
+            this.viewToolStripMenuItem1.Enabled = false;
+            this.viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
+            this.viewToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.viewToolStripMenuItem1.Text = "View";
             // 
             // Form1
             // 
@@ -571,6 +604,7 @@ namespace Game_of_Life___Jonah_Pickett
             this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.gridPanelMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -633,6 +667,9 @@ namespace Game_of_Life___Jonah_Pickett
         private System.Windows.Forms.ToolStripMenuItem resetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reloadToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelAlive;
+        private System.Windows.Forms.ContextMenuStrip gridPanelMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem1;
     }
 }
 
