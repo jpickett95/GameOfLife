@@ -445,6 +445,7 @@ namespace Game_of_Life___Jonah_Pickett
         // View -> Counting Numbers button
         private void neighborCountToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            neighborCountToolStripMenuItem1.Checked = !neighborCountToolStripMenuItem1.Checked;
             neighborCountToolStripMenuItem.Checked = !neighborCountToolStripMenuItem.Checked;
             graphicsPanel1.Invalidate();
         }

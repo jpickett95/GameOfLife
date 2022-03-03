@@ -92,7 +92,7 @@ namespace Game_of_Life___Jonah_Pickett
             this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.hUDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.neighboRCountToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.neighborCountToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gridToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -575,22 +575,22 @@ namespace Game_of_Life___Jonah_Pickett
             this.colorToolStripMenuItem,
             this.viewToolStripMenuItem1});
             this.gridPanelMenuStrip1.Name = "gridPanelMenuStrip1";
-            this.gridPanelMenuStrip1.Size = new System.Drawing.Size(104, 48);
+            this.gridPanelMenuStrip1.Size = new System.Drawing.Size(181, 70);
             // 
             // colorToolStripMenuItem
             // 
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.colorToolStripMenuItem.Text = "Color";
             // 
             // viewToolStripMenuItem1
             // 
             this.viewToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hUDToolStripMenuItem,
-            this.neighboRCountToolStripMenuItem1,
+            this.neighborCountToolStripMenuItem1,
             this.gridToolStripMenuItem1});
             this.viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
-            this.viewToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
+            this.viewToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.viewToolStripMenuItem1.Text = "View";
             // 
             // hUDToolStripMenuItem
@@ -600,13 +600,14 @@ namespace Game_of_Life___Jonah_Pickett
             this.hUDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hUDToolStripMenuItem.Text = "HUD";
             // 
-            // neighboRCountToolStripMenuItem1
+            // neighborCountToolStripMenuItem1
             // 
-            this.neighboRCountToolStripMenuItem1.Enabled = false;
-            this.neighboRCountToolStripMenuItem1.Name = "neighboRCountToolStripMenuItem1";
-            this.neighboRCountToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.neighboRCountToolStripMenuItem1.Text = "Neighbor Count";
-            this.neighboRCountToolStripMenuItem1.Click += new System.EventHandler(this.neighboRCountToolStripMenuItem1_Click);
+            this.neighborCountToolStripMenuItem1.Checked = true;
+            this.neighborCountToolStripMenuItem1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.neighborCountToolStripMenuItem1.Name = "neighborCountToolStripMenuItem1";
+            this.neighborCountToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.neighborCountToolStripMenuItem1.Text = "Neighbor Count";
+            this.neighborCountToolStripMenuItem1.Click += new System.EventHandler(this.neighborCountToolStripMenuItem_Click);
             // 
             // gridToolStripMenuItem1
             // 
@@ -708,7 +709,7 @@ namespace Game_of_Life___Jonah_Pickett
         private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem hUDToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem neighboRCountToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem neighborCountToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem gridToolStripMenuItem1;
     }
 }
