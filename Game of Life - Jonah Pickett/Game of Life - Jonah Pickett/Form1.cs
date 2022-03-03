@@ -12,8 +12,6 @@ namespace Game_of_Life___Jonah_Pickett
 {
     public partial class Form1 : Form
     {
-        bool toroidalChecked = false;
-        bool finiteChecked = true;
 
         // The universe array
         bool[,] universe = new bool[5, 5];
@@ -52,8 +50,22 @@ namespace Game_of_Life___Jonah_Pickett
 
 
                     // Apply the rules
-                    // Rule 1
-
+                    if (universe[x, y] == true && count < 2)
+                    {
+                        scratchPad[x, y] = false;
+                    }
+                    else if (universe[x, y] == true && (count == 2 || count == 3))
+                    {
+                        scratchPad[x, y] = true;
+                    }
+                    else if (universe[x, y] == true && count > 3)
+                    {
+                        scratchPad[x, y] = false;
+                    }
+                    else if (universe[x, y] == false && count == 3)
+                    {
+                        scratchPad[x, y] = true;
+                    }
 
 
                     // Turn it on/off in the scratchPad
@@ -218,11 +230,11 @@ namespace Game_of_Life___Jonah_Pickett
         private int CountNeighbors(int x, int y)
         {
             int neighbors = 0;
-            if(toroidalChecked == true)
+            if(toroidalToolStripMenuItem.Checked == true)
             {
                 neighbors = CountNeighborsToroidal(x, y);
             }
-            else if (finiteChecked == true)
+            else if (finiteToolStripMenuItem.Checked == true)
             {
                 neighbors = CountNeighborsFinite(x, y);
             }
@@ -319,15 +331,13 @@ namespace Game_of_Life___Jonah_Pickett
         // View -> Toroidal button
         private void toroidalToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
         {
-            toroidalChecked = !toroidalChecked;
-            if (finiteChecked == true && toroidalChecked == true)
+            bool toroidalChecked = toroidalToolStripMenuItem.Checked;
+            if (finiteToolStripMenuItem.Checked == true && toroidalChecked == true)
             {
-                finiteChecked = false;
                 finiteToolStripMenuItem.Checked = false;
             }
-            else if (finiteChecked == false && toroidalChecked == false)
+            else if (finiteToolStripMenuItem.Checked == false && toroidalChecked == false)
             {
-                finiteChecked = true;
                 finiteToolStripMenuItem.Checked = true;
             }
 
@@ -341,15 +351,13 @@ namespace Game_of_Life___Jonah_Pickett
         // View -> Finite button
         private void finiteToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
         {
-            finiteChecked = !finiteChecked;
-            if(finiteChecked == true && toroidalChecked == true)
+            bool finiteChecked = finiteToolStripMenuItem.Checked;
+            if(finiteChecked == true && toroidalToolStripMenuItem.Checked == true)
             {
-                toroidalChecked = false;
                 toroidalToolStripMenuItem.Checked = false;
             }
-            else if (finiteChecked == false && toroidalChecked == false)
+            else if (finiteChecked == false && toroidalToolStripMenuItem.Checked == false)
             {
-                toroidalChecked = true;
                 toroidalToolStripMenuItem.Checked = true;
             }
             graphicsPanel1.Invalidate();
