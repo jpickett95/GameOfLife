@@ -306,6 +306,20 @@ namespace Game_of_Life___Jonah_Pickett
         private void toroidalToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
         {
             toroidalChecked = !toroidalChecked;
+            if (finiteChecked == true && toroidalChecked == true)
+            {
+                finiteChecked = false;
+                finiteToolStripMenuItem.Checked = false;
+            }
+            else if (finiteChecked == false && toroidalChecked == false)
+            {
+                finiteChecked = true;
+                finiteToolStripMenuItem.Checked = true;
+            }
+        }
+        private void toroidalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            toroidalToolStripMenuItem.Checked = !toroidalToolStripMenuItem.Checked;
         }
 
         // View -> Finite button
@@ -323,10 +337,11 @@ namespace Game_of_Life___Jonah_Pickett
                 toroidalToolStripMenuItem.Checked = true;
             }
         }
-
         private void finiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             finiteToolStripMenuItem.Checked = !finiteToolStripMenuItem.Checked;
         }
+
+        
     }
 }
