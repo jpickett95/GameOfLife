@@ -312,6 +312,21 @@ namespace Game_of_Life___Jonah_Pickett
         private void finiteToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
         {
             finiteChecked = !finiteChecked;
+            if(finiteChecked == true && toroidalChecked == true)
+            {
+                toroidalChecked = false;
+                toroidalToolStripMenuItem.Checked = false;
+            }
+            else if (finiteChecked == false && toroidalChecked == false)
+            {
+                toroidalChecked = true;
+                toroidalToolStripMenuItem.Checked = true;
+            }
+        }
+
+        private void finiteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            finiteToolStripMenuItem.Checked = !finiteToolStripMenuItem.Checked;
         }
     }
 }
