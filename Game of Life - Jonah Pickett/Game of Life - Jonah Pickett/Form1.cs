@@ -106,6 +106,9 @@ namespace Game_of_Life___Jonah_Pickett
             if (seed == 0) seed = rng.Next(); // initial random seed to start 
             seedToolStripStatusLabel1.Text = "Seed = " + seed.ToString();
 
+            // Update to display current interval
+            intervalToolStripStatusLabel.Text = "Interval: " + timer.Interval.ToString();
+
             // FLOATS!!!
             // Calculate the width and height of each cell in pixels
             // CELL WIDTH = WINDOW WIDTH / NUMBER OF CELLS IN X

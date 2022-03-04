@@ -95,6 +95,7 @@ namespace Game_of_Life___Jonah_Pickett
             this.gridToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.seedToolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.graphicsPanel1 = new Game_of_Life___Jonah_Pickett.GraphicsPanel();
+            this.intervalToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -539,6 +540,7 @@ namespace Game_of_Life___Jonah_Pickett
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelGenerations,
+            this.intervalToolStripStatusLabel,
             this.toolStripStatusLabelAlive,
             this.seedToolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 323);
@@ -625,6 +627,12 @@ namespace Game_of_Life___Jonah_Pickett
             this.graphicsPanel1.TabIndex = 3;
             this.graphicsPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.graphicsPanel1_Paint);
             this.graphicsPanel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.graphicsPanel1_MouseClick);
+            // 
+            // intervalToolStripStatusLabel
+            // 
+            this.intervalToolStripStatusLabel.Name = "intervalToolStripStatusLabel";
+            this.intervalToolStripStatusLabel.Size = new System.Drawing.Size(66, 17);
+            this.intervalToolStripStatusLabel.Text = "Interval = 0";
             // 
             // Form1
             // 
@@ -720,6 +728,7 @@ namespace Game_of_Life___Jonah_Pickett
         private System.Windows.Forms.ToolStripMenuItem neighborCountToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem gridToolStripMenuItem1;
         private System.Windows.Forms.ToolStripStatusLabel seedToolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel intervalToolStripStatusLabel;
     }
 }
 
