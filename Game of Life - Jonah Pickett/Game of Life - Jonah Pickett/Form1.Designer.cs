@@ -87,13 +87,14 @@ namespace Game_of_Life___Jonah_Pickett
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelGenerations = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelAlive = new System.Windows.Forms.ToolStripStatusLabel();
-            this.graphicsPanel1 = new Game_of_Life___Jonah_Pickett.GraphicsPanel();
             this.gridPanelMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.hUDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.neighborCountToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gridToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.graphicsPanel1 = new Game_of_Life___Jonah_Pickett.GraphicsPanel();
+            this.seedToolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -135,7 +136,7 @@ namespace Game_of_Life___Jonah_Pickett
             this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
@@ -146,20 +147,20 @@ namespace Game_of_Life___Jonah_Pickett
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "&Open";
             // 
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Enabled = false;
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.importToolStripMenuItem.Text = "&Import";
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(177, 6);
             // 
             // saveToolStripMenuItem
             // 
@@ -168,18 +169,18 @@ namespace Game_of_Life___Jonah_Pickett
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -261,7 +262,7 @@ namespace Game_of_Life___Jonah_Pickett
             this.customizeToolStripMenuItem.Image = global::Game_of_Life___Jonah_Pickett.Properties.Resources.Play;
             this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
             this.customizeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.customizeToolStripMenuItem.Text = "&Start";
             this.customizeToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -270,7 +271,7 @@ namespace Game_of_Life___Jonah_Pickett
             this.optionsToolStripMenuItem.Image = global::Game_of_Life___Jonah_Pickett.Properties.Resources.Pause;
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.optionsToolStripMenuItem.Text = "&Pause";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -279,7 +280,7 @@ namespace Game_of_Life___Jonah_Pickett
             this.nextToolStripMenuItem.Image = global::Game_of_Life___Jonah_Pickett.Properties.Resources.NextFrame;
             this.nextToolStripMenuItem.Name = "nextToolStripMenuItem";
             this.nextToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7;
-            this.nextToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.nextToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nextToolStripMenuItem.Text = "&Next";
             this.nextToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
@@ -287,7 +288,7 @@ namespace Game_of_Life___Jonah_Pickett
             // 
             this.toToolStripMenuItem.Enabled = false;
             this.toToolStripMenuItem.Name = "toToolStripMenuItem";
-            this.toToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.toToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.toToolStripMenuItem.Text = "&To";
             // 
             // randomizeToolStripMenuItem
@@ -304,20 +305,20 @@ namespace Game_of_Life___Jonah_Pickett
             // 
             this.fromSeedToolStripMenuItem.Enabled = false;
             this.fromSeedToolStripMenuItem.Name = "fromSeedToolStripMenuItem";
-            this.fromSeedToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.fromSeedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fromSeedToolStripMenuItem.Text = "From Seed";
             // 
             // fromCurrentSeedToolStripMenuItem
             // 
             this.fromCurrentSeedToolStripMenuItem.Enabled = false;
             this.fromCurrentSeedToolStripMenuItem.Name = "fromCurrentSeedToolStripMenuItem";
-            this.fromCurrentSeedToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.fromCurrentSeedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fromCurrentSeedToolStripMenuItem.Text = "From Current Seed";
             // 
             // fromTimeToolStripMenuItem
             // 
             this.fromTimeToolStripMenuItem.Name = "fromTimeToolStripMenuItem";
-            this.fromTimeToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.fromTimeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fromTimeToolStripMenuItem.Text = "From Time";
             this.fromTimeToolStripMenuItem.Click += new System.EventHandler(this.fromTimeToolStripMenuItem_Click);
             // 
@@ -538,7 +539,8 @@ namespace Game_of_Life___Jonah_Pickett
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelGenerations,
-            this.toolStripStatusLabelAlive});
+            this.toolStripStatusLabelAlive,
+            this.seedToolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 323);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(573, 22);
@@ -557,30 +559,18 @@ namespace Game_of_Life___Jonah_Pickett
             this.toolStripStatusLabelAlive.Size = new System.Drawing.Size(53, 17);
             this.toolStripStatusLabelAlive.Text = "Alive = 0";
             // 
-            // graphicsPanel1
-            // 
-            this.graphicsPanel1.BackColor = System.Drawing.SystemColors.Window;
-            this.graphicsPanel1.ContextMenuStrip = this.gridPanelMenuStrip1;
-            this.graphicsPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.graphicsPanel1.Location = new System.Drawing.Point(0, 49);
-            this.graphicsPanel1.Name = "graphicsPanel1";
-            this.graphicsPanel1.Size = new System.Drawing.Size(573, 274);
-            this.graphicsPanel1.TabIndex = 3;
-            this.graphicsPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.graphicsPanel1_Paint);
-            this.graphicsPanel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.graphicsPanel1_MouseClick);
-            // 
             // gridPanelMenuStrip1
             // 
             this.gridPanelMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.colorToolStripMenuItem,
             this.viewToolStripMenuItem1});
             this.gridPanelMenuStrip1.Name = "gridPanelMenuStrip1";
-            this.gridPanelMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.gridPanelMenuStrip1.Size = new System.Drawing.Size(104, 48);
             // 
             // colorToolStripMenuItem
             // 
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.colorToolStripMenuItem.Text = "Color";
             // 
             // viewToolStripMenuItem1
@@ -590,7 +580,7 @@ namespace Game_of_Life___Jonah_Pickett
             this.neighborCountToolStripMenuItem1,
             this.gridToolStripMenuItem1});
             this.viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
-            this.viewToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.viewToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
             this.viewToolStripMenuItem1.Text = "View";
             // 
             // hUDToolStripMenuItem
@@ -617,6 +607,24 @@ namespace Game_of_Life___Jonah_Pickett
             this.gridToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.gridToolStripMenuItem1.Text = "Grid";
             this.gridToolStripMenuItem1.Click += new System.EventHandler(this.gridToolStripMenuItem_Click);
+            // 
+            // graphicsPanel1
+            // 
+            this.graphicsPanel1.BackColor = System.Drawing.SystemColors.Window;
+            this.graphicsPanel1.ContextMenuStrip = this.gridPanelMenuStrip1;
+            this.graphicsPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.graphicsPanel1.Location = new System.Drawing.Point(0, 49);
+            this.graphicsPanel1.Name = "graphicsPanel1";
+            this.graphicsPanel1.Size = new System.Drawing.Size(573, 274);
+            this.graphicsPanel1.TabIndex = 3;
+            this.graphicsPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.graphicsPanel1_Paint);
+            this.graphicsPanel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.graphicsPanel1_MouseClick);
+            // 
+            // seedToolStripStatusLabel1
+            // 
+            this.seedToolStripStatusLabel1.Name = "seedToolStripStatusLabel1";
+            this.seedToolStripStatusLabel1.Size = new System.Drawing.Size(52, 17);
+            this.seedToolStripStatusLabel1.Text = "Seed = 0";
             // 
             // Form1
             // 
@@ -711,6 +719,7 @@ namespace Game_of_Life___Jonah_Pickett
         private System.Windows.Forms.ToolStripMenuItem hUDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem neighborCountToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem gridToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripStatusLabel seedToolStripStatusLabel1;
     }
 }
 

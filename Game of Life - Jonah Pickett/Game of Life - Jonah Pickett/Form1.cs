@@ -102,8 +102,6 @@ namespace Game_of_Life___Jonah_Pickett
             }
             toolStripStatusLabelAlive.Text = "Alive = " + livingCells.ToString();
 
-            
-
             // Invalidate graphics panel
             graphicsPanel1.Invalidate();
         }
@@ -116,6 +114,10 @@ namespace Game_of_Life___Jonah_Pickett
 
         private void graphicsPanel1_Paint(object sender, PaintEventArgs e)
         {
+            // Update to display current seed
+            if (seed == 0) seed = rng.Next(); // initial random seed to start 
+            seedToolStripStatusLabel1.Text = "Seed = " + seed.ToString();
+
             // FLOATS!!!
             // Calculate the width and height of each cell in pixels
             // CELL WIDTH = WINDOW WIDTH / NUMBER OF CELLS IN X
@@ -440,9 +442,10 @@ namespace Game_of_Life___Jonah_Pickett
 
         // Randomize Universe by Time
         private void RandomizeUniverseByTime()
-        {   
+        {
             //Random # Generator - based off current time in ticks
-            rng = new Random((int)DateTime.Now.Ticks);
+            seed = (int)DateTime.Now.Ticks;
+            rng = new Random(seed);
 
             // Loop through universe
             for (int y = 0; y < universe.GetLength(1); y++)
