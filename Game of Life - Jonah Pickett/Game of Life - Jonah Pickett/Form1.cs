@@ -62,19 +62,19 @@ namespace Game_of_Life___Jonah_Pickett
                     // Apply the rules & turn on/off in scratchPad
                     if (universe[x, y] == true && count < 2) // Rule #1
                     {
-                        scratchPad[x, y] = false;
+                        scratchPad[x, y] = false; // cell dies
                     }
                     else if (universe[x, y] == true && (count == 2 || count == 3)) // Rule #3
                     {
-                        scratchPad[x, y] = true;
+                        scratchPad[x, y] = true; // cell lives
                     }
                     else if (universe[x, y] == true && count > 3) // Rule #2
                     {
-                        scratchPad[x, y] = false;
+                        scratchPad[x, y] = false; // cell dies
                     }
                     else if (universe[x, y] == false && count == 3) // Rule #4
                     {
-                        scratchPad[x, y] = true;
+                        scratchPad[x, y] = true; // cell is born
                     }
                 }
             }
@@ -428,6 +428,12 @@ namespace Game_of_Life___Jonah_Pickett
             graphicsPanel1.Invalidate();
         }
 
+        // Randomize -> From Current Seed button
+        private void fromCurrentSeedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RandomizeUniverse();
+        }
+
         // Randomize Universe by Time
         private void RandomizeUniverseByTime()
         {
@@ -477,10 +483,6 @@ namespace Game_of_Life___Jonah_Pickett
             graphicsPanel1.Invalidate();
         }
 
-        // Randomize -> From Current Seed button
-        private void fromCurrentSeedToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RandomizeUniverse();
-        }
+        
     }
 }
