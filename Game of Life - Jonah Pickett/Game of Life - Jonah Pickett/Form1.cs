@@ -415,29 +415,25 @@ namespace Game_of_Life___Jonah_Pickett
         // Initial Randomize Universe
         private void RandomizeUniverse()
         {
-            rng = new Random(seed);
-            int livingCount = (universe.GetLength(1) * universe.GetLength(0)) / 3;
+            rng = new Random(seed); // use current seed variable
             
             for (int y = 0; y < universe.GetLength(1); y++)
             {
                 for (int x = 0; x < universe.GetLength(0); x++)
                 {
-                    if (livingCount > 0)
+                    // Generate random # (0-2) to see if that cell will be alive/dead
+                    int number = rng.Next(0, 3);
+                    if (number == 0)
                     {
-                        int number = rng.Next(0, 3);
-                        if (number == 0)
-                        {
-                            universe[x, y] = true;
-                        }
-                        else
-                            universe[x, y] = false;
-
-                        livingCount--;
+                        universe[x, y] = true;
                     }
                     else
-                        universe[x, y] = false;
+                        universe[x, y] = false;                        
                 }
             }
+
+            // Refresh screen
+            graphicsPanel1.Invalidate();
         }
 
         // Randomize Universe by Time
@@ -489,6 +485,10 @@ namespace Game_of_Life___Jonah_Pickett
             graphicsPanel1.Invalidate();
         }
 
-        
+        // Randomize -> From Current Seed button
+        private void fromCurrentSeedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RandomizeUniverse();
+        }
     }
 }
