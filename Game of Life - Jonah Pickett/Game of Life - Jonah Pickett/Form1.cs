@@ -88,19 +88,7 @@ namespace Game_of_Life___Jonah_Pickett
             generations++;
 
             // Update status strip generations
-            toolStripStatusLabelGenerations.Text = "Generations = " + generations.ToString();
-
-            // Update status strip living cells
-            livingCells = 0;
-            for (int y = 0; y < universe.GetLength(1); y++)
-            {
-                for (int x = 0; x < universe.GetLength(0); x++)
-                {
-                    if (universe[x, y] == true)
-                        livingCells++;
-                }
-            }
-            toolStripStatusLabelAlive.Text = "Alive = " + livingCells.ToString();
+            toolStripStatusLabelGenerations.Text = "Generations = " + generations.ToString();           
 
             // Invalidate graphics panel
             graphicsPanel1.Invalidate();
@@ -175,6 +163,18 @@ namespace Game_of_Life___Jonah_Pickett
                 }
             }
 
+            // Update status strip living cells
+            livingCells = 0;
+            for (int y = 0; y < universe.GetLength(1); y++)
+            {
+                for (int x = 0; x < universe.GetLength(0); x++)
+                {
+                    if (universe[x, y] == true)
+                        livingCells++;
+                }
+            }
+            toolStripStatusLabelAlive.Text = "Alive = " + livingCells.ToString();
+
             // Cleaning up pens and brushes
             gridPen.Dispose();
             cellBrush.Dispose();
@@ -197,14 +197,7 @@ namespace Game_of_Life___Jonah_Pickett
                 int y = (int)(e.Y / cellHeight);
 
                 // Toggle the cell's state
-                universe[x, y] = !universe[x, y];
-
-                // Update living cells count
-                if (universe[x, y] == true) // toggle on
-                    livingCells++;
-                else if (universe[x, y] == false) // toggle off
-                    livingCells--;
-                toolStripStatusLabelAlive.Text = "Alive = " + livingCells.ToString();
+                universe[x, y] = !universe[x, y];              
 
                 // Tell Windows you need to repaint
                 graphicsPanel1.Invalidate(); // used after every click, every new generation, after "new", turnthings on/off, etc;
@@ -253,10 +246,6 @@ namespace Game_of_Life___Jonah_Pickett
             // resets generation count to 0
             generations = 0; 
             toolStripStatusLabelGenerations.Text = "Generations = " + generations.ToString();
-
-            // resets living cells count to 0 
-            livingCells = 0;          
-            toolStripStatusLabelAlive.Text = "Alive = " + livingCells.ToString();
 
             // refresh to display update
             graphicsPanel1.Invalidate();
