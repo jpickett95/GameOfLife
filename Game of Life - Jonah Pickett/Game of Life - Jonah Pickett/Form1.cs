@@ -8,8 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace Game_of_Life___Jonah_Pickett
 {
+
     public partial class Form1 : Form
     {
         // The universe array
@@ -27,6 +30,11 @@ namespace Game_of_Life___Jonah_Pickett
 
         // Living Cells count
         int livingCells = 0;
+
+        // Initial 'seed' variable & Random # Generator
+        Random rng = new Random();
+        int seed = 0;
+
 
         public Form1()
         {
@@ -93,6 +101,8 @@ namespace Game_of_Life___Jonah_Pickett
                 }
             }
             toolStripStatusLabelAlive.Text = "Alive = " + livingCells.ToString();
+
+            
 
             // Invalidate graphics panel
             graphicsPanel1.Invalidate();
@@ -350,7 +360,7 @@ namespace Game_of_Life___Jonah_Pickett
             return count;
         }
 
-        // HUD
+        // View -> HUD
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
@@ -403,8 +413,9 @@ namespace Game_of_Life___Jonah_Pickett
         // Initial Randomize Universe
         private void RandomizeUniverse()
         {
+            rng = new Random(seed);
             int livingCount = (universe.GetLength(1) * universe.GetLength(0)) / 3;
-            Random rng = new Random();
+            
             for (int y = 0; y < universe.GetLength(1); y++)
             {
                 for (int x = 0; x < universe.GetLength(0); x++)
@@ -426,11 +437,12 @@ namespace Game_of_Life___Jonah_Pickett
                 }
             }
         }
+
         // Randomize Universe by Time
         private void RandomizeUniverseByTime()
         {   
             //Random # Generator - based off current time in ticks
-            Random timerng = new Random((int)DateTime.Now.Ticks);
+            rng = new Random((int)DateTime.Now.Ticks);
 
             // Loop through universe
             for (int y = 0; y < universe.GetLength(1); y++)
@@ -438,7 +450,7 @@ namespace Game_of_Life___Jonah_Pickett
                 for (int x = 0; x < universe.GetLength(0); x++)
                 {
                     // Generate random # (0-2) to see if that cell will be alive/dead
-                    int number = timerng.Next(0, 3);
+                    int number = rng.Next(0, 3);
                     if (number == 0)
                     {
                         universe[x, y] = true;
