@@ -148,19 +148,35 @@ namespace Game_of_Life___Jonah_Pickett
                     }
                     
 
-                    // Displaying Neighbor Count
+                    // Displaying Color-Coded Neighbor Count
                     if(neighborCountToolStripMenuItem.Checked == true)
                     {
                         int neighbors = CountNeighbors(x, y);
                         if (neighbors != 0)
                         {
-                            Font font = new Font("Arial", 20f);
+                            Font font = new Font("Arial", 20f);                
 
                             StringFormat stringFormat = new StringFormat();
                             stringFormat.Alignment = StringAlignment.Center;
                             stringFormat.LineAlignment = StringAlignment.Center;
 
-                            e.Graphics.DrawString(neighbors.ToString(), font, Brushes.Black, cellRect, stringFormat);
+                            // Color-Coding
+                            if (universe[x, y] == true && neighbors < 2) // Rule #1
+                            {
+                                e.Graphics.DrawString(neighbors.ToString(), font, Brushes.Red, cellRect, stringFormat); // Red color since cell dies
+                            }
+                            else if (universe[x, y] == true && (neighbors == 2 || neighbors == 3)) // Rule #3
+                            {
+                                e.Graphics.DrawString(neighbors.ToString(), font, Brushes.Green, cellRect, stringFormat); // Green color since cell lives
+                            }
+                            else if (universe[x, y] == true && neighbors > 3) // Rule #2
+                            {
+                                e.Graphics.DrawString(neighbors.ToString(), font, Brushes.Red, cellRect, stringFormat); // Red color since cell dies
+                            }
+                            else if (universe[x, y] == false && neighbors == 3) // Rule #4
+                            {
+                                e.Graphics.DrawString(neighbors.ToString(), font, Brushes.Green, cellRect, stringFormat); // Green color since cell lives
+                            }                            
                         }
                     }             
                 }
