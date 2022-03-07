@@ -721,5 +721,25 @@ namespace Game_of_Life___Jonah_Pickett
             graphicsPanel1.Invalidate();
         }
 
+        // Settings - Options Dialog Box
+        private void optionsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //instantiate dialog box
+            OptionsModalDialog dlg = new OptionsModalDialog();
+
+            // set initial values in dialog box to current timer interval, universe width & height
+            dlg.OptionsInterval = timer.Interval;
+            dlg.OptionsWidth = universe.GetLength(0);
+            dlg.OptionsHeight = universe.GetLength(1);
+
+            // if changes are accepted, execute changes
+            if (DialogResult.OK == dlg.ShowDialog())
+            {
+                timer.Interval = dlg.OptionsInterval; // change timer interval         
+            }
+
+            // Refresh display to update
+            graphicsPanel1.Invalidate();
+        }
     }
 }
