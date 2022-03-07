@@ -720,5 +720,6 @@ namespace Game_of_Life___Jonah_Pickett
             // Refresh screen to display updates
             graphicsPanel1.Invalidate();
         }
+
     }
 }
