@@ -832,7 +832,7 @@ namespace Game_of_Life___Jonah_Pickett
             graphicsPanel1.Invalidate();
         }
 
-        // Update Settings Properties
+        // Update Settings Properties once form is closed
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Properties.Settings.Default.GridX10Color = gridX10Color;
