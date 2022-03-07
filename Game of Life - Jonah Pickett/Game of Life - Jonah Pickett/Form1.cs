@@ -736,7 +736,8 @@ namespace Game_of_Life___Jonah_Pickett
             // if changes are accepted, execute changes
             if (DialogResult.OK == dlg.ShowDialog())
             {
-                timer.Interval = dlg.OptionsInterval; // change timer interval         
+                timer.Interval = dlg.OptionsInterval; // change timer interval
+                universe = new bool[dlg.OptionsWidth, dlg.OptionsHeight]; // re-size universe
             }
 
             // Refresh display to update
