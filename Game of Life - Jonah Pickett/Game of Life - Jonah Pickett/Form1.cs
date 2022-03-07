@@ -759,5 +759,47 @@ namespace Game_of_Life___Jonah_Pickett
                 RandomizeUniverse();
             }
         }
+
+        // File -> Import button
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "All Files|*.*|Cells|*.cells";
+            dlg.FilterIndex = 2;
+
+            if (DialogResult.OK == dlg.ShowDialog())
+            {
+                StreamReader reader = new StreamReader(dlg.FileName);
+
+                int yPos = 0; // for accessing y-position of cell in universe
+
+                // Iterate through the file, reading in the cells.
+                while (!reader.EndOfStream)
+                {
+                    // Read one row at a time.
+                    string row = reader.ReadLine();
+
+                    // If the row begins with '!' then it is a comment and should be ignored.
+                    if (row[0] == '!') continue;
+
+                    // If the row is not a comment then it is a row of cells and needs to be iterated through.
+                    for (int xPos = 0; xPos < row.Length; xPos++)
+                    {
+                        // If row[xPos] is a 'O' (capital O) then set the corresponding cell in the universe to alive. 
+                        if (row[xPos] == 'O') universe[xPos, yPos] = true;
+
+                        // If row[xPos] is a '.' (period) then set the corresponding cell in the universe to dead.
+                        else if (row[xPos] == '.') universe[xPos, yPos] = false;
+                    }
+                    yPos++; // increase yPos for every new row
+                }
+
+                // Close the file.
+                reader.Close();
+            }
+
+            // Refresh display to update changes
+            graphicsPanel1.Invalidate();
+        }
     }
 }
