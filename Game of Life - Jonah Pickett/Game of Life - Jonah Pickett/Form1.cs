@@ -20,7 +20,7 @@ namespace Game_of_Life___Jonah_Pickett
         bool[,] universe = new bool[30, 30];
 
         // Drawing colors
-        Color gridColor = Color.Black;
+        Color gridColor = Color.Gray;
         Color cellColor = Color.LightGray;
         Color gridX10Color = Color.Black;
 
@@ -224,6 +224,28 @@ namespace Game_of_Life___Jonah_Pickett
                 gridX10Pen.Dispose();
             }
 
+            // Display HUD
+            if(HUD.Checked == true)
+            {
+                Font font = new Font("Arial", 13f, FontStyle.Bold);
+
+                StringFormat stringFormat = new StringFormat();
+                stringFormat.Alignment = StringAlignment.Near;
+                stringFormat.LineAlignment = StringAlignment.Far;
+
+                // HUD data
+                string HUDString = "Generations: " + generations.ToString() + "\n" + "Living Cells: " + livingCells.ToString() + "\n" + "Universe Size: {Width: " + universe.GetLength(0).ToString() + ", Height: " + universe.GetLength(1) + "}";
+                
+                // check to see if boundary is toroidal/finite & append to HUD data
+                if (toroidalToolStripMenuItem.Checked == true)
+                    HUDString += "\nBoundary Type: Toroidal";
+                else if(finiteToolStripMenuItem.Checked == true)
+                    HUDString += "\nBoundary Type: Finite";
+
+                // Display HUD
+                e.Graphics.DrawString(HUDString, font, Brushes.DarkCyan, graphicsPanel1.ClientRectangle, stringFormat);
+            }
+
             // Cleaning up pens and brushes
             gridPen.Dispose();
             cellBrush.Dispose();
@@ -403,7 +425,9 @@ namespace Game_of_Life___Jonah_Pickett
         // View -> HUD
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            HUD.Checked = !HUD.Checked;
+            hUDToolStripMenuItem.Checked = !hUDToolStripMenuItem.Checked;
+            graphicsPanel1.Invalidate();
         }
 
         // View -> Toroidal button
