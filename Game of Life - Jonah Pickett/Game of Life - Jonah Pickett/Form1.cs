@@ -263,12 +263,12 @@ namespace Game_of_Life___Jonah_Pickett
 
                 // Calculate the cell that was clicked in
                 // CELL X = MOUSE X / CELL WIDTH
-                int x = (int)(e.X / cellWidth);
+                float x = (e.X / cellWidth);
                 // CELL Y = MOUSE Y / CELL HEIGHT
-                int y = (int)(e.Y / cellHeight);
+                float y = (e.Y / cellHeight);
 
                 // Toggle the cell's state
-                universe[x, y] = !universe[x, y];              
+                universe[(int)x, (int)y] = !universe[(int)x, (int)y];              
 
                 // Tell Windows you need to repaint
                 graphicsPanel1.Invalidate(); // used after every click, every new generation, after "new", turnthings on/off, etc;
