@@ -611,7 +611,7 @@ namespace Game_of_Life___Jonah_Pickett
 
                 // Resize the current universe and scratchPad to the width and height of the file calculated above.
                 universe = new bool[maxWidth, maxHeight];
-                int yPos = 0;
+                int yPos = 0; // for accessing y-position of cell in universe
 
                 // Reset the file pointer back to the beginning of the file.
                 reader.BaseStream.Seek(0, SeekOrigin.Begin);
@@ -635,7 +635,7 @@ namespace Game_of_Life___Jonah_Pickett
                         // If row[xPos] is a '.' (period) then set the corresponding cell in the universe to dead.
                         else if (row[xPos] == '.') universe[xPos, yPos] = false;
                     }
-                    yPos++;
+                    yPos++; // increase yPos for every new row
                 }
 
                 // Close the file.
