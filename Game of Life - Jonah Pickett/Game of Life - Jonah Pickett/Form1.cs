@@ -21,7 +21,7 @@ namespace Game_of_Life___Jonah_Pickett
 
         // Drawing colors
         Color gridColor = Color.Black;
-        Color cellColor = Color.Gray;
+        Color cellColor = Color.LightGray;
         Color gridX10Color = Color.Black;
 
         // The Timer class
@@ -156,7 +156,7 @@ namespace Game_of_Life___Jonah_Pickett
                         int neighbors = CountNeighbors(x, y);
                         if (neighbors != 0)
                         {
-                            Font font = new Font("Arial", 20f);                
+                            Font font = new Font("Arial", (cellHeight/2));                
 
                             StringFormat stringFormat = new StringFormat();
                             stringFormat.Alignment = StringAlignment.Center;
