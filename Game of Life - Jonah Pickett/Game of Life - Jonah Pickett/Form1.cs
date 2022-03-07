@@ -42,8 +42,14 @@ namespace Game_of_Life___Jonah_Pickett
         {
             InitializeComponent(); // constructor; calling designer code
 
+            graphicsPanel1.BackColor = Properties.Settings.Default.BackColor; // import background color settings
+            gridColor = Properties.Settings.Default.GridColor; // import grid color settings
+            cellColor = Properties.Settings.Default.CellColor; // import cell color settings
+            gridX10Color = Properties.Settings.Default.GridX10Color; // import grid X10 settings
+            universe = new bool[Properties.Settings.Default.UniverseWidth, Properties.Settings.Default.UniverseHeight]; // import universe size settings
+
             // Setup the timer
-            timer.Interval = 100; // milliseconds
+            timer.Interval = Properties.Settings.Default.TimerInterval; // milliseconds; imported from settings
             timer.Tick += Timer_Tick;
             timer.Enabled = false; // start timer running
         }
@@ -824,6 +830,20 @@ namespace Game_of_Life___Jonah_Pickett
 
             // Refresh display to update changes
             graphicsPanel1.Invalidate();
+        }
+
+        // Update Settings Properties
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Properties.Settings.Default.GridX10Color = gridX10Color;
+            Properties.Settings.Default.GridColor = gridColor;
+            Properties.Settings.Default.CellColor = cellColor;
+            Properties.Settings.Default.TimerInterval = timer.Interval;
+            Properties.Settings.Default.UniverseWidth = universe.GetLength(0);
+            Properties.Settings.Default.UniverseHeight = universe.GetLength(1);
+            Properties.Settings.Default.BackColor = graphicsPanel1.BackColor;
+
+            Properties.Settings.Default.Save(); // saves settings
         }
     }
 }
