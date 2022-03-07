@@ -702,6 +702,7 @@ namespace Game_of_Life___Jonah_Pickett
             graphicsPanel1.Invalidate();
         }
 
+        // Settings -> Grid X10 Color button
         private void gridX10ColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // instantiate  color dialog box
