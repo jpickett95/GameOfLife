@@ -635,5 +635,24 @@ namespace Game_of_Life___Jonah_Pickett
             // Refresh screen to display updates
             graphicsPanel1.Invalidate();
         }
+
+        // Settings -> Cell Color button
+        private void cellColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // instantiate  color dialog box
+            ColorDialog dlg = new ColorDialog();
+
+            // set dialog box to current background color
+            dlg.Color = cellColor;
+
+            // if a color is accepted, change background color
+            if (DialogResult.OK == dlg.ShowDialog())
+            {
+                cellColor = dlg.Color;
+            }
+
+            // Refresh screen to display updates
+            graphicsPanel1.Invalidate();
+        }
     }
 }

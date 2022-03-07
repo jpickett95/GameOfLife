@@ -348,10 +348,10 @@ namespace Game_of_Life___Jonah_Pickett
             // 
             // cellColorToolStripMenuItem
             // 
-            this.cellColorToolStripMenuItem.Enabled = false;
             this.cellColorToolStripMenuItem.Name = "cellColorToolStripMenuItem";
             this.cellColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cellColorToolStripMenuItem.Text = "Cell Color";
+            this.cellColorToolStripMenuItem.Click += new System.EventHandler(this.cellColorToolStripMenuItem_Click);
             // 
             // gridColorToolStripMenuItem
             // 
