@@ -26,7 +26,7 @@ namespace Game_of_Life___Jonah_Pickett
 
         // The Timer class
         Timer timer = new Timer();
-        int timerStop = 0;
+        int timerStop = 0; // stop variable for Run -> To button
 
         // Generation count
         int generations = 0;
@@ -110,8 +110,8 @@ namespace Game_of_Life___Jonah_Pickett
         private void Timer_Tick(object sender, EventArgs e)
         {
             NextGeneration();
-
-            if (generations == timerStop) timer.Stop();
+            
+            if (generations == timerStop) timer.Stop(); // stops timer for Run -> To button
         }
 
         private void graphicsPanel1_Paint(object sender, PaintEventArgs e)
@@ -899,8 +899,8 @@ namespace Game_of_Life___Jonah_Pickett
             // if changes are accepted, execute changes
             if (DialogResult.OK == dlg.ShowDialog())
             {
-                timerStop = dlg.GenerationNumericUpDown;
-                timer.Enabled = true;                            
+                timerStop = dlg.GenerationNumericUpDown; // set timer stop variable to desired generation
+                timer.Enabled = true; // start timer                     
             }
         }
     }
