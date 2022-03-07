@@ -721,7 +721,7 @@ namespace Game_of_Life___Jonah_Pickett
             graphicsPanel1.Invalidate();
         }
 
-        // Settings - Options Dialog Box
+        // Settings -> Options Dialog Box
         private void optionsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             //instantiate dialog box
