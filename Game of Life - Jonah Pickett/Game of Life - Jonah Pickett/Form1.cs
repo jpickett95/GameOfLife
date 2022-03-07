@@ -46,7 +46,10 @@ namespace Game_of_Life___Jonah_Pickett
             gridColor = Properties.Settings.Default.GridColor; // import grid color settings
             cellColor = Properties.Settings.Default.CellColor; // import cell color settings
             gridX10Color = Properties.Settings.Default.GridX10Color; // import grid X10 settings
-            universe = new bool[Properties.Settings.Default.UniverseWidth, Properties.Settings.Default.UniverseHeight]; // import universe size settings
+            // import universe size settings
+            int uWidth = Properties.Settings.Default.UniverseWidth;
+            int uHeight = Properties.Settings.Default.UniverseHeight;
+            universe = new bool[uWidth, uHeight]; 
 
             // Setup the timer
             timer.Interval = Properties.Settings.Default.TimerInterval; // milliseconds; imported from settings
@@ -844,6 +847,40 @@ namespace Game_of_Life___Jonah_Pickett
             Properties.Settings.Default.BackColor = graphicsPanel1.BackColor;
 
             Properties.Settings.Default.Save(); // saves settings
+        }
+
+        // Settings -> Reset button
+        private void resetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Reset(); // revert back to default program settings
+
+            // import properties
+            graphicsPanel1.BackColor = Properties.Settings.Default.BackColor;
+            gridColor = Properties.Settings.Default.GridColor; 
+            cellColor = Properties.Settings.Default.CellColor; 
+            gridX10Color = Properties.Settings.Default.GridX10Color; 
+            timer.Interval = Properties.Settings.Default.TimerInterval;
+            // import universe size settings
+            int uWidth = Properties.Settings.Default.UniverseWidth;
+            int uHeight = Properties.Settings.Default.UniverseHeight;
+            universe = new bool[uWidth, uHeight];
+        }
+
+        // Settings -> Reload button
+        private void reloadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Reload(); // reload to last saved settings
+
+            // import properties
+            graphicsPanel1.BackColor = Properties.Settings.Default.BackColor;
+            gridColor = Properties.Settings.Default.GridColor;
+            cellColor = Properties.Settings.Default.CellColor;
+            gridX10Color = Properties.Settings.Default.GridX10Color;
+            timer.Interval = Properties.Settings.Default.TimerInterval;
+            // import universe size settings
+            int uWidth = Properties.Settings.Default.UniverseWidth;
+            int uHeight = Properties.Settings.Default.UniverseHeight;
+            universe = new bool[uWidth, uHeight];
         }
     }
 }
