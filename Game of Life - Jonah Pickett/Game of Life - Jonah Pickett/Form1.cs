@@ -562,7 +562,7 @@ namespace Game_of_Life___Jonah_Pickett
             graphicsPanel1.Invalidate();
         }
 
-        // File -> Save button    
+        // File -> Save As button    
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog dlg = new SaveFileDialog();
