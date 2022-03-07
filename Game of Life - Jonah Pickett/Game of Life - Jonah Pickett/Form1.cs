@@ -267,8 +267,8 @@ namespace Game_of_Life___Jonah_Pickett
             {
                 // FLOATS!!!
                 // Calculate the width and height of each cell in pixels
-                float cellWidth = graphicsPanel1.ClientSize.Width / universe.GetLength(0);
-                float cellHeight = graphicsPanel1.ClientSize.Height / universe.GetLength(1);
+                float cellWidth = (float)graphicsPanel1.ClientSize.Width / (float)universe.GetLength(0);
+                float cellHeight = (float)graphicsPanel1.ClientSize.Height / (float)universe.GetLength(1);
 
                 // Calculate the cell that was clicked in
                 // CELL X = MOUSE X / CELL WIDTH
