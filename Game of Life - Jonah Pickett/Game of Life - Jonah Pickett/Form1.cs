@@ -177,7 +177,8 @@ namespace Game_of_Life___Jonah_Pickett
                             else if (universe[x, y] == false && neighbors == 3) // Rule #4
                             {
                                 e.Graphics.DrawString(neighbors.ToString(), font, Brushes.Green, cellRect, stringFormat); // Green color since cell lives
-                            }                            
+                            }
+                            else e.Graphics.DrawString(neighbors.ToString(), font, Brushes.Red, cellRect, stringFormat);
                         }
                     }             
                 }
@@ -517,8 +518,8 @@ namespace Game_of_Life___Jonah_Pickett
                 // Use WriteLine to write the strings to the file. 
                 // It appends a CRLF for you.
                 writer.WriteLine("!Universe Save File");
-                writer.WriteLine("\'O\' = Living cell");
-                writer.WriteLine("\'.\' = Dead cell");
+                writer.WriteLine("!\'O\' = Living cell");
+                writer.WriteLine("!\'.\' = Dead cell");
 
                 // Iterate through the universe one row at a time.
                 for (int y = 0; y < universe.GetLength(1); y++)
@@ -612,8 +613,7 @@ namespace Game_of_Life___Jonah_Pickett
                 reader.Close();
             }
 
-            // Refresh display to update changes
-            graphicsPanel1.Invalidate();
+            
         }
     }
 }
