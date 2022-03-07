@@ -610,7 +610,7 @@ namespace Game_of_Life___Jonah_Pickett
                 }
 
                 // Resize the current universe and scratchPad to the width and height of the file calculated above.
-                universe = new bool[maxWidth, maxHeight];
+                universe = new bool[maxWidth, maxHeight];                
 
                 // Reset the file pointer back to the beginning of the file.
                 reader.BaseStream.Seek(0, SeekOrigin.Begin);
@@ -740,6 +740,22 @@ namespace Game_of_Life___Jonah_Pickett
 
             // Refresh display to update
             graphicsPanel1.Invalidate();
+        }
+
+        // Randomize -> From Seed dialog box
+        private void fromSeedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RandomSeedModalDialog dlg = new RandomSeedModalDialog();
+
+            // set dialog box to current seed
+            dlg.SeedNumericUpDown = seed;
+
+            // if a color is accepted, change seed & randomize universe
+            if (DialogResult.OK == dlg.ShowDialog())
+            {
+                seed = dlg.SeedNumericUpDown;
+                RandomizeUniverse();
+            }
         }
     }
 }
