@@ -545,7 +545,7 @@ namespace Game_of_Life___Jonah_Pickett
                 // Prefix all comment strings with an exclamation point.
                 // Use WriteLine to write the strings to the file. 
                 // It appends a CRLF for you.
-                writer.WriteLine("!Universe Save File");
+                writer.WriteLine("!Universe Save File " + DateTime.Now);
                 writer.WriteLine("!\'O\' = Living cell");
                 writer.WriteLine("!\'.\' = Dead cell");
 
