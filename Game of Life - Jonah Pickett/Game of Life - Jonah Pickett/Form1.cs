@@ -501,7 +501,7 @@ namespace Game_of_Life___Jonah_Pickett
             graphicsPanel1.Invalidate();
         }
 
-        // File -> Save button    ****NOT TESTED!!!****
+        // File -> Save button    
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog dlg = new SaveFileDialog();
@@ -613,7 +613,27 @@ namespace Game_of_Life___Jonah_Pickett
                 reader.Close();
             }
 
-            
+            // Refresh display to update changes
+            graphicsPanel1.Invalidate();
+        }
+
+        // Settings -> Back Color button
+        private void backColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // instantiate  color dialog box
+            ColorDialog dlg = new ColorDialog();
+
+            // set dialog box to current background color
+            dlg.Color = graphicsPanel1.BackColor;
+
+            // if a color is accepted, change background color
+            if(DialogResult.OK == dlg.ShowDialog())
+            {
+                graphicsPanel1.BackColor = dlg.Color;
+            }
+
+            // Refresh screen to display updates
+            graphicsPanel1.Invalidate();
         }
     }
 }
