@@ -574,7 +574,7 @@ namespace Game_of_Life___Jonah_Pickett
             }
         }
 
-        // File -> Open button    ****NOT TESTED!!!****
+        // File -> Open button
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -610,7 +610,8 @@ namespace Game_of_Life___Jonah_Pickett
                 }
 
                 // Resize the current universe and scratchPad to the width and height of the file calculated above.
-                universe = new bool[maxWidth, maxHeight];                
+                universe = new bool[maxWidth, maxHeight];
+                int yPos = 0;
 
                 // Reset the file pointer back to the beginning of the file.
                 reader.BaseStream.Seek(0, SeekOrigin.Begin);
@@ -620,7 +621,7 @@ namespace Game_of_Life___Jonah_Pickett
                 {
                     // Read one row at a time.
                     string row = reader.ReadLine();
-                    int yPos = 0;
+                    
 
                     // If the row begins with '!' then it is a comment and should be ignored.
                     if (row[0] == '!') continue;
