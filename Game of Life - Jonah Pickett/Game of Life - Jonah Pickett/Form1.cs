@@ -882,5 +882,27 @@ namespace Game_of_Life___Jonah_Pickett
             int uHeight = Properties.Settings.Default.UniverseHeight;
             universe = new bool[uWidth, uHeight];
         }
+
+        // Run -> To button
+        private void toToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //instantiate dialog box
+            ToModalDialog dlg = new ToModalDialog();
+
+            // set to current generation
+            dlg.GenerationNumericUpDown = generations;
+            dlg.GenNumUpDownMin = generations; // sets minimum value to current generation
+
+            // if changes are accepted, execute changes
+            if (DialogResult.OK == dlg.ShowDialog())
+            {
+                int userInput = dlg.GenerationNumericUpDown;
+                int genAdvance = userInput - generations;
+                for(int i = 0; i < genAdvance; i++)
+                {
+                    NextGeneration();
+                }
+            }
+        }
     }
 }

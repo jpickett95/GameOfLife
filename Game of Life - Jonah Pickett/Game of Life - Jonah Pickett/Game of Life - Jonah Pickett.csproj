@@ -69,6 +69,12 @@
     <Compile Include="RandomSeedModalDialog.Designer.cs">
       <DependentUpon>RandomSeedModalDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToModalDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToModalDialog.Designer.cs">
+      <DependentUpon>ToModalDialog.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +93,9 @@
     </Compile>
     <EmbeddedResource Include="RandomSeedModalDialog.resx">
       <DependentUpon>RandomSeedModalDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToModalDialog.resx">
+      <DependentUpon>ToModalDialog.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -10,3 +10,4 @@ C:\Users\jpick\source\repos\GameOfLife\Game of Life - Jonah Pickett\Game of Life
 C:\Users\jpick\source\repos\GameOfLife\Game of Life - Jonah Pickett\Game of Life - Jonah Pickett\obj\Debug\Game of Life - Jonah Pickett.pdb
 C:\Users\jpick\source\repos\GameOfLife\Game of Life - Jonah Pickett\Game of Life - Jonah Pickett\obj\Debug\Game_of_Life___Jonah_Pickett.OptionsModalDialog.resources
 C:\Users\jpick\source\repos\GameOfLife\Game of Life - Jonah Pickett\Game of Life - Jonah Pickett\obj\Debug\Game_of_Life___Jonah_Pickett.RandomSeedModalDialog.resources
+C:\Users\jpick\source\repos\GameOfLife\Game of Life - Jonah Pickett\Game of Life - Jonah Pickett\obj\Debug\Game_of_Life___Jonah_Pickett.ToModalDialog.resources
