@@ -17,11 +17,12 @@ namespace Game_of_Life___Jonah_Pickett
     public partial class Form1 : Form
     {
         // The universe array
-        bool[,] universe = new bool[5, 5];
+        bool[,] universe = new bool[30, 30];
 
         // Drawing colors
         Color gridColor = Color.Black;
         Color cellColor = Color.Gray;
+        Color gridX10Color = Color.Black;
 
         // The Timer class
         Timer timer = new Timer();
@@ -195,6 +196,33 @@ namespace Game_of_Life___Jonah_Pickett
                 }
             }
             toolStripStatusLabelAlive.Text = "Alive = " + livingCells.ToString();
+
+            // Display Grid X10
+            if ((universe.GetLength(0) % 10) == 0 && (universe.GetLength(1) % 10) == 0) // check if universe width & height are divisible by 10
+            {
+                // new pen for grid x10
+                Pen gridX10Pen = new Pen(gridX10Color, 2);                
+
+                // iterate through universe
+                for (int y = 0; y < universe.GetLength(1); y++)
+                {
+                    for (int x = 0; x < universe.GetLength(0); x++)
+                    {
+                        // Create gridX10 rectangle
+                        RectangleF gridX10Rect = RectangleF.Empty;
+                        gridX10Rect.X = x * (cellWidth * 10);
+                        gridX10Rect.Y = y * (cellHeight * 10);
+                        gridX10Rect.Width = cellWidth * 10;
+                        gridX10Rect.Height = cellHeight * 10;
+
+                        // Draw outline 
+                        e.Graphics.DrawRectangle(gridX10Pen, gridX10Rect.X, gridX10Rect.Y, gridX10Rect.Width, gridX10Rect.Height);                      
+                    }
+                }
+
+                // Clean up pen
+                gridX10Pen.Dispose();
+            }
 
             // Cleaning up pens and brushes
             gridPen.Dispose();
@@ -620,7 +648,7 @@ namespace Game_of_Life___Jonah_Pickett
         // Settings -> Back Color button
         private void backColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // instantiate  color dialog box
+            // instantiate color dialog box
             ColorDialog dlg = new ColorDialog();
 
             // set dialog box to current background color
@@ -639,16 +667,53 @@ namespace Game_of_Life___Jonah_Pickett
         // Settings -> Cell Color button
         private void cellColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // instantiate  color dialog box
+            // instantiate color dialog box
             ColorDialog dlg = new ColorDialog();
 
-            // set dialog box to current background color
+            // set dialog box to current cell color
             dlg.Color = cellColor;
 
-            // if a color is accepted, change background color
+            // if a color is accepted, change cell color
             if (DialogResult.OK == dlg.ShowDialog())
             {
                 cellColor = dlg.Color;
+            }
+
+            // Refresh screen to display updates
+            graphicsPanel1.Invalidate();
+        }
+
+        // Settings -> Grid Color button
+        private void gridColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // instantiate  color dialog box
+            ColorDialog dlg = new ColorDialog();
+
+            // set dialog box to current grid color
+            dlg.Color = gridColor;
+
+            // if a color is accepted, change grid color
+            if (DialogResult.OK == dlg.ShowDialog())
+            {
+                gridColor = dlg.Color;
+            }
+
+            // Refresh screen to display updates
+            graphicsPanel1.Invalidate();
+        }
+
+        private void gridX10ColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // instantiate  color dialog box
+            ColorDialog dlg = new ColorDialog();
+
+            // set dialog box to current grid X10 color
+            dlg.Color = gridX10Color;
+
+            // if a color is accepted, change grid X10 color
+            if (DialogResult.OK == dlg.ShowDialog())
+            {
+                gridX10Color = dlg.Color;
             }
 
             // Refresh screen to display updates
