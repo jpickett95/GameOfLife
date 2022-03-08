@@ -17,18 +17,21 @@ namespace Game_of_Life___Jonah_Pickett
             InitializeComponent();
         }
 
+        // Developer LinkedIn Link
         private void devLinkedInlinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.devLinkedInlinkLabel.LinkVisited = true;
             System.Diagnostics.Process.Start("https://www.linkedin.com/in/jonahpickett/");
         }
 
+        // Conway's Game of Life Wiki Link
         private void conwayGOLWikiLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.conwayGOLWikiLinkLabel.LinkVisited = true;
             System.Diagnostics.Process.Start("https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life");
         }
 
+        // Life Lexicon Link
         private void lifeLexiconLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.lifeLexiconLinkLabel.LinkVisited = true;

@@ -581,7 +581,8 @@ namespace Game_of_Life___Jonah_Pickett
                 // Prefix all comment strings with an exclamation point.
                 // Use WriteLine to write the strings to the file. 
                 // It appends a CRLF for you.
-                writer.WriteLine("!Universe Save File " + DateTime.Now);
+                writer.WriteLine("!Universe Save File: " + dlg.FileName);
+                writer.WriteLine("!Created: " + DateTime.Now);
                 writer.WriteLine("!\'O\' = Living cell");
                 writer.WriteLine("!\'.\' = Dead cell");
 
@@ -904,11 +905,11 @@ namespace Game_of_Life___Jonah_Pickett
             }
         }
 
+        // Help -> About modeless dialog box
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HelpModelessDialog dlg = new HelpModelessDialog();
-
-            dlg.Show();
+            HelpModelessDialog dlg = new HelpModelessDialog(); // instantiate dialog box
+            dlg.Show(); // show modeless dialog box
         }
     }
 }
