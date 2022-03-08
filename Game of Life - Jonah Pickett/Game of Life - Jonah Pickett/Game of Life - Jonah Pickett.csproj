@@ -55,6 +55,12 @@
     <Compile Include="GraphicsPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="HelpModelessDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpModelessDialog.Designer.cs">
+      <DependentUpon>HelpModelessDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="OptionsModalDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpModelessDialog.resx">
+      <DependentUpon>HelpModelessDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OptionsModalDialog.resx">
       <DependentUpon>OptionsModalDialog.cs</DependentUpon>

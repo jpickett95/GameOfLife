@@ -29,6 +29,7 @@ namespace Game_of_Life___Jonah_Pickett
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RandomSeedModalDialog));
             this.button1OK = new System.Windows.Forms.Button();
             this.button1Cancel = new System.Windows.Forms.Button();
             this.numericUpDownSeed = new System.Windows.Forms.NumericUpDown();
@@ -106,6 +107,7 @@ namespace Game_of_Life___Jonah_Pickett
             this.Controls.Add(this.button1Cancel);
             this.Controls.Add(this.button1OK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RandomSeedModalDialog";

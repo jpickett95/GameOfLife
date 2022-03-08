@@ -903,5 +903,12 @@ namespace Game_of_Life___Jonah_Pickett
                 timer.Enabled = true; // start timer                     
             }
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HelpModelessDialog dlg = new HelpModelessDialog();
+
+            dlg.Show();
+        }
     }
 }
