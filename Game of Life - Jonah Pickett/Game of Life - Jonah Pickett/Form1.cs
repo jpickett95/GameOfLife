@@ -911,5 +911,45 @@ namespace Game_of_Life___Jonah_Pickett
             HelpModelessDialog dlg = new HelpModelessDialog(); // instantiate dialog box
             dlg.Show(); // show modeless dialog box
         }
+
+        // File -> Save button
+        private void saveToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            string drive = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); // gets current user's drive & 'Documents' folder
+            string filePath = $"{drive}\\universe.cells"; // sets file path to user's My Documents folder, and saves file there
+            StreamWriter writer = new StreamWriter(filePath);
+
+            // Write any comments you want to include first.
+            // Prefix all comment strings with an exclamation point.
+            // Use WriteLine to write the strings to the file. 
+            // It appends a CRLF for you.
+            writer.WriteLine("!Universe Save File: " + filePath);
+            writer.WriteLine("!Created: " + DateTime.Now);
+            writer.WriteLine("!\'O\' = Living cell");
+            writer.WriteLine("!\'.\' = Dead cell");
+
+            // Iterate through the universe one row at a time.
+            for (int y = 0; y < universe.GetLength(1); y++)
+            {
+                // Create a string to represent the current row.
+                String currentRow = string.Empty;
+
+                // Iterate through the current row one cell at a time.
+                for (int x = 0; x < universe.GetLength(0); x++)
+                {
+                    // If the universe[x,y] is alive then append 'O' (capital O) to the row string.
+                    if (universe[x, y] == true) currentRow += 'O';
+
+                    // Else if the universe[x,y] is dead then append '.' (period) to the string.
+                    else if (universe[x, y] == false) currentRow += '.';
+                }
+
+                // Once the current row has been read through and the string constructed, then write it to the file using WriteLine.
+                writer.WriteLine(currentRow);
+            }
+
+            // After all rows and columns have been written then close the file.
+            writer.Close();
+        }
     }
 }
