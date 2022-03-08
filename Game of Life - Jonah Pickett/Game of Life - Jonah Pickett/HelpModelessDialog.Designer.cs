@@ -158,6 +158,7 @@ namespace Game_of_Life___Jonah_Pickett
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HelpModelessDialog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Help - About";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
