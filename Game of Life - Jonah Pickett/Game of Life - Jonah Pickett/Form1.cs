@@ -956,5 +956,24 @@ namespace Game_of_Life___Jonah_Pickett
             // After all rows and columns have been written then close the file.
             writer.Close();
         }
+
+        // View -> HUD Color button
+        private void hUDColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // instantiate color dialog box
+            ColorDialog dlg = new ColorDialog();
+
+            // set dialog box to current HUD color
+            dlg.Color = hudColor;
+
+            // if a color is accepted, change HUD color
+            if (DialogResult.OK == dlg.ShowDialog())
+            {
+                hudColor = dlg.Color;
+            }
+
+            // Refresh screen to display updates
+            graphicsPanel1.Invalidate();
+        }
     }
 }
