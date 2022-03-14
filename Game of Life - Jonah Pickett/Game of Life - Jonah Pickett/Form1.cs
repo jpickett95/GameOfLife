@@ -23,6 +23,7 @@ namespace Game_of_Life___Jonah_Pickett
         Color gridColor = Color.Gray;
         Color cellColor = Color.LightGray;
         Color gridX10Color = Color.Black;
+        Color hudColor = Color.DarkCyan;
 
         // The Timer class
         Timer timer = new Timer();
@@ -239,6 +240,8 @@ namespace Game_of_Life___Jonah_Pickett
             // Display HUD
             if(HUD.Checked == true)
             {
+                Brush hudBrush = new SolidBrush(hudColor);
+
                 Font font = new Font("Arial", 13f, FontStyle.Bold);
 
                 StringFormat stringFormat = new StringFormat();
@@ -255,7 +258,7 @@ namespace Game_of_Life___Jonah_Pickett
                     HUDString += "\nBoundary Type: Finite";
 
                 // Display HUD
-                e.Graphics.DrawString(HUDString, font, Brushes.DarkCyan, graphicsPanel1.ClientRectangle, stringFormat);
+                e.Graphics.DrawString(HUDString, font, hudBrush, graphicsPanel1.ClientRectangle, stringFormat);
             }
 
             // Cleaning up pens and brushes
