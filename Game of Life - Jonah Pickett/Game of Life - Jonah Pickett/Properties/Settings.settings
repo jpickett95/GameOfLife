@@ -23,5 +23,8 @@
     <Setting Name="BackColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Window</Value>
     </Setting>
+    <Setting Name="HUDColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">DarkCyan</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

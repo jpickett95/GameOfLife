@@ -48,6 +48,7 @@ namespace Game_of_Life___Jonah_Pickett
             gridColor = Properties.Settings.Default.GridColor; // import grid color settings
             cellColor = Properties.Settings.Default.CellColor; // import cell color settings
             gridX10Color = Properties.Settings.Default.GridX10Color; // import grid X10 settings
+            hudColor = Properties.Settings.Default.HUDColor; // import HUD color settings
             // import universe size settings
             int uWidth = Properties.Settings.Default.UniverseWidth;
             int uHeight = Properties.Settings.Default.UniverseHeight;
@@ -852,6 +853,7 @@ namespace Game_of_Life___Jonah_Pickett
             Properties.Settings.Default.UniverseWidth = universe.GetLength(0);
             Properties.Settings.Default.UniverseHeight = universe.GetLength(1);
             Properties.Settings.Default.BackColor = graphicsPanel1.BackColor;
+            Properties.Settings.Default.HUDColor = hudColor;
 
             Properties.Settings.Default.Save(); // saves settings
         }
